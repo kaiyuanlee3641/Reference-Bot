@@ -1,23 +1,24 @@
 {
-  "name": "simple-mern",
-  "version": "0.2.0",
-  "description": "the simplest MERN (MongoDB, Express, React and Node) setup",
+  "name": "catcraven",
+  "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js",
-    "start:prod": "node index.js",
-    "build": "cd client && npm install && npm run build"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "James Vickery",
-  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaiyuanlee3641/catcraven.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kaiyuanlee3641/catcraven/issues"
+  },
+  "homepage": "https://github.com/kaiyuanlee3641/catcraven#readme",
   "dependencies": {
-    "body-parser": "^1.18.3",
-    "express": "^4.16.4",
-    "mongoose": "^5.7.5",
-    "password-generator": "^2.2.0"
-  },
-  "devDependencies": {
-    "prettier": "^1.18.2"
+    "@discordjs/builders": "^0.12.0",
+    "@discordjs/rest": "^0.3.0",
+    "discord-api-types": "^0.27.0"
   }
 }

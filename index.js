@@ -1,21 +1,14 @@
-const express = require('express');
-const path = require('path');
-const bodyParser = require('body-parser');
+// Require the necessary discord.js classes
+const { Client, Intents } = require('discord.js');
+const { token } = require('./config.json');
 
-const app = express();
+// Create a new client instance
+const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
-const routeTasks = require('./src/routes/tasks');
-
-app.use(express.static(path.join(__dirname, 'client/build')));
-app.use(bodyParser.json());
-
-app.use('/api/tasks', routeTasks, (req, res) => res.sendStatus(401));
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname + '/client/build/index.html'));
+// When the client is ready, run this code (only once)
+client.once('ready', () => {
+	console.log('Ready!');
 });
 
-const port = process.env.PORT || 5000;
-app.listen(port);
-
-console.log(`listening on ${port}`);
+// Login to Discord with your client's token
+client.login(token);
