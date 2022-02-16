@@ -9,8 +9,14 @@ module.exports = {
             .setDescription('Search query')
             .setRequired(false)),
 	async execute(interaction) {
-        if (interaction.options.getString("input") === null) query = ""; else query = interaction.options.getString("input");
-		await interaction.reply(random_image(await search(interaction.options.getString("input"))));
+        try{
+            if (interaction.options.getString("input") === null) query = ""; else query = interaction.options.getString("input");
+            await interaction.reply(random_image(await search(interaction.options.getString("input"))));
+        }
+        catch(error){
+            console.log(error)
+            await interaction.reply('There was an error finding image.')
+        }
 	},
 };
 

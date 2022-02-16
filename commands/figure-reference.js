@@ -36,7 +36,13 @@ module.exports = {
             query = query + " " + interaction.options.getString('chromosomes')
         }
         console.log(query);
-        await interaction.reply(await random_image(query));
+        try{
+            await interaction.reply(await random_image(query));
+        }
+        catch(error) {
+            console.log(error);
+            await interaction.reply("There was an error.");
+        }
 	},
 };
 
@@ -57,7 +63,7 @@ async function random_image(query) {
 
     // Get the number of responses
     const first_results = await search(query)
-    const total_results = first_results.total_results
+    const total_results = first_results.total_results;
 
     // To improve quality, don't go beyond the 100th image
     const page = Math.ceil(Math.random()*(Math.min(total_results/2, 100)))
@@ -72,4 +78,5 @@ async function random_image(query) {
     const newSearch = await client.photos.search(queryParams)
 
     return newSearch.photos[0]["src"]["original"]
+    
 }

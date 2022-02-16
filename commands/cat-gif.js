@@ -5,7 +5,13 @@ module.exports = {
         .setName('catvideo')
         .setDescription('Search shutterstock video'),
 	async execute(interaction) {
-		await interaction.reply(random_image(await search("cat")));
+        try{
+		    await interaction.reply(random_image(await search("cat")));
+        }
+        catch(error){
+            console.log(error);
+            await interaction.reply('There was an error finding cat videos.')
+        }
 	},
 };
 

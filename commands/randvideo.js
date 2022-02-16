@@ -9,7 +9,13 @@ module.exports = {
             .setDescription('Search query')
             .setRequired(true)),
 	async execute(interaction) {
-		await interaction.reply(random_image(await search(interaction.options.getString("input"))));
+        try{
+		    await interaction.reply(random_image(await search(interaction.options.getString("input"))));
+        }
+        catch(error){
+            console.log(error)
+            await interaction.reply('There was an error finding videos.')
+        }
 	},
 };
 
