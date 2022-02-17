@@ -21,7 +21,7 @@ module.exports = {
 
 // Gets a response from Shutterstock based on a search query
 async function search(query) {
-    const { SHUTTERSTOCK_API_TOKEN } = require("../config.json");
+    const SHUTTERSTOCK_API_TOKEN = process.env.SHUTTERSTOCK_API_TOKEN;
     const sstk = require("shutterstock-api");
     sstk.setAccessToken(SHUTTERSTOCK_API_TOKEN);
 

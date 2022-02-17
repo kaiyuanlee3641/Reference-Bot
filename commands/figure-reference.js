@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { createClient } =require('pexels');
-const { PEXELS_API_TOKEN } = require("../config.json")
+const PEXELS_API_TOKEN = process.env.PEXELS_API_TOKEN;
 const client = createClient(PEXELS_API_TOKEN);
 
 module.exports = {
