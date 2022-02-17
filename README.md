@@ -7,7 +7,7 @@ Since our leader, Melody, is the president of the Digital Illustration Club, we 
 The Refereceninator-5000 is a discord server bot that allows discord users to use commands that prompt the bot to send relevant reference images for human figures. The users can select from a variety of options what kind of reference they want. For example, specific limbs like feet and hands. It also has a few other functions, with a command to show a cat video.
 
 ## Tech Stack
-We used VSCode and used Javascript & Node to program the bot. It is hosted on Heroku. It uses two API's of websites that contain many images: Shutterstock and Pexel.
+We used VSCode and used Javascript & Node to program the bot. It is hosted on Heroku. It uses two API's of websites that contain a database of searchable images: Shutterstock and Pexel.
 
 ## Challenges
 The Shutterstock API didn't give us very revelant reference images, so we ended up using a curated set of images (Pexel API) for figures.  
